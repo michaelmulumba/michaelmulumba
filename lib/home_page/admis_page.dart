@@ -117,7 +117,7 @@ class _HomePageState extends State<AdmisPage>{
             children: [
               InkWell(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SplashScreen(title: 'Ecran d\'accuiel',)));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AddCollector()));
                 },
                 child: Container(
                 decoration: BoxDecoration(

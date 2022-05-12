@@ -2,8 +2,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:login/system/requestapproved_page.dart';
 
 import '../pages/splash_screen.dart';
+import '../system/request_page.dart';
 
 class CollecteurPage extends StatefulWidget {
 
@@ -24,6 +26,7 @@ class _CollecteurPageState extends State<CollecteurPage> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text("Page Collecteur",
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
@@ -154,7 +157,7 @@ class _CollecteurPageState extends State<CollecteurPage> {
               InkWell(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (
-                      context) => SplashScreen(title: 'Ecran d\'accuiel',)));
+                      context) => RequestPage()));
                 },
                 child: Container(
                     decoration: BoxDecoration(
@@ -164,8 +167,8 @@ class _CollecteurPageState extends State<CollecteurPage> {
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.location_on, size: 50, color: Colors.white,),
-                          Text('Localisation',
+                          Icon(Icons.library_books_sharp, size: 50, color: Colors.white,),
+                          Text('Demande de recupration',
                             textAlign: TextAlign.center,
                             style: TextStyle(color: Colors.white,
                                 fontSize: 20,
@@ -186,18 +189,46 @@ class _CollecteurPageState extends State<CollecteurPage> {
                       Text('Rapport de travail', textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white,
                             fontSize: 20,
-                            fontWeight: FontWeight.bold),),
+                            fontWeight: FontWeight.bold),
+                      ),
                     ]
                 ),
               ),
+               InkWell(
+                 onTap: () {
+                   Navigator.push(context, MaterialPageRoute(builder: (
+                       context) => RequestApprovedPage()));
+                 },
+                 child: Container (
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.blue,
+                 ),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                       children: [
+                         Icon(Icons.library_books_rounded, size: 50, color: Colors.white,),
+                         Text('Demande approuvée', textAlign: TextAlign.center,
+                           style: TextStyle(color: Colors.white,
+                               fontSize: 20,
+                               fontWeight: FontWeight.bold),
+                         ),
+                       ],
+                  )
+                 ),
+               ),
 
-            ],
+
+
+
+
+  ],
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               mainAxisSpacing: 10,
               crossAxisSpacing: 10,
             ),
-          )
+          ),
       ),
     );
   }

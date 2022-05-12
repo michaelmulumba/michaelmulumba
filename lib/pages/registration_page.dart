@@ -50,8 +50,7 @@ class _RegistrationPageState extends State<RegistrationPage>{
                                 padding: EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100),
-                                  border: Border.all(
-                                      width: 5, color: Colors.white),
+                                  border: Border.all(width: 5, color: Colors.white),
                                   color: Colors.white,
                                   boxShadow: [
                                     BoxShadow(
@@ -63,7 +62,7 @@ class _RegistrationPageState extends State<RegistrationPage>{
                                 ),
                                 child: Icon(
                                   Icons.person,
-                                  color: Colors.grey.shade300,
+                                  color: Colors.green.shade300,
                                   size: 80.0,
                                 ),
                               ),
@@ -71,7 +70,7 @@ class _RegistrationPageState extends State<RegistrationPage>{
                                 padding: EdgeInsets.fromLTRB(80, 80, 0, 0),
                                 child: Icon(
                                   Icons.add_circle,
-                                  color: Colors.grey.shade700,
+                                  color: Colors.blueGrey,
                                   size: 25.0,
                                 ),
                               ),
